@@ -1,0 +1,257 @@
+*{
+    /* Eliminamos estilos por defecto del navegador y añadimos un tipo de letra */
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+
+    background-color: rgb(231, 230, 228);
+
+}
+
+main{
+
+    padding-top: 100px;
+
+
+}
+
+/*Header de index.html*/
+header#headerPagina{
+
+    background-color: rgb(202, 200, 200);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    box-shadow: 5px 5px 5px gray;
+    
+}
+
+/*Botones del header*/
+button.botonesHeader{
+
+    border-radius: 10px;
+    display: inline;
+    border: none;
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button.botonesHeader:hover{
+
+    background-color: rgba(88, 88, 88, 0.726);
+    transition: 0.6s;
+    color: white;
+    border: none;
+
+}
+
+
+a#tituloHeader{
+
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+}
+
+
+input#inputHeader{
+
+    margin: auto;
+    width: 300px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+/*Títulos utilizados en el contenido principal*/
+h2.titulos{
+
+    margin-top: 40px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+/*Con esta caja englobo todo el contenido principal para flotarlo a la derecha, debido a que el contenido
+es tapado por el aside.*/
+div#cajaFlotada{
+
+    float: right;
+
+}
+
+/* Primer ejemplo propiedades flex */
+
+/*Aplicarimos display flex al contenedor padre, y le aplicaremos un align-items:center 
+para que los hijos se alieen al centro del contenedor.*/
+div#divFlex1{
+
+    height: 400px;
+    width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Queremos que el primer hijo sea el más grande y el que menos espacio proporcione. Una vez que su witdh llegue a
+450px, dejará de disminuir. */
+div#divFlex1 :first-child{
+    
+    background-image: url("../img/librojava.jfif");
+    height: 300px;
+    min-width: 450px;
+    border: 2px solid black;
+    flex-grow: 3;
+    flex-shrink: 2;
+    margin: 5px;
+}
+
+/*Segundo ejemplo propiedades flex*/
+
+/*Dividiremos los libros por columnas aplicando flex-direction:column; en este caso, de 3 libros por columna.
+Al estar alineado en columna, cuando la suma de las alturas de las cajas superan la altura de la caja padre,
+se aplicaría la propiedad flex-wrap:wrap, y haría que las cajas saltasen a otra columna.*/
+div#divFlex2{
+
+    height: 600px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+/*Todos los contenedores libros comparten esta clase, en las que le aplico las propiedades flex-shrink: 3 y flex-grow: 1
+Con flex-shrink lo que consigo es que, si se añade un contenedor más, todas las cajas se dividan 3 particiones para 
+proporcionar espacio al nuevo contenedor. En el caso de flex-grow, cuando sobre espacio, todas las cajas se 
+apropiarán 1 partición del espacio sobrante.*/
+
+div.divLibros{
+ 
+    background-color: aqua;
+    border: 2px solid black;
+    height: 170px;
+    flex-shrink: 3;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+/*Añadimos imágenes de libros a todos los contenedores*/
+
+div#libro1{
+
+    background-image: url("../img/librocodigo.jfif");
+
+}
+
+div#libro2{
+
+    background-image: url("../img/libroc.jfif");
+
+}
+
+div#libro3{
+
+    background-image: url("../img/libropascal.jfif");
+
+}
+
+div#libro4{
+
+    background-image: url("../img/librocsharp.jpg");
+
+}
+
+div#libro6{
+
+    background-image: url("../img/libroarquitectura.jpg");
+
+}
+
+
+div#libro5{
+
+    background-image: url("../img/librogo.jpg");
+
+}
+
+div#libro8{
+
+    background-image: url("../img/librophp.jfif");
+
+}
+
+div#libro7{
+
+    background-image: url("../img/librop.jfif");
+
+}
+
+
+/* Menú lateral de la página. Aplicamos un position fixed para que conforme damos scroll a la página, el aside
+esté fijo y sea más cómodo para el usuario.*/
+
+aside#menuLateral{
+
+    background-color: rgb(185, 187, 187);
+    position: fixed;
+    width: 300px;
+    height: 100%;
+
+}
+
+/*Contenedor principal dentro de aside. Le aplicamos un display:flex y un flex-direction:column para que la
+disposicion de sus hijos sea en columnas.*/
+
+div#divAside{
+
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    
+}
+
+/* Párrafos que se encuentran dentro de divAside. Aplicamos display:flex, justify-content: center y align-items : center
+para alinear el texto de cada párrafo al centro del mismo.*/
+
+p.parrafoAside{
+
+    margin: auto;
+    font-size: 25px;
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    cursor: pointer;
+}
+
+p.parrafoAside:hover{
+
+    background-color: rgb(255, 255, 255);
+    transition: 1s;
+    font-size: 35px;
+    font-style: italic;
+   
+}
+
